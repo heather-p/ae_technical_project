@@ -1,0 +1,116 @@
+version: 2
+
+models:
+  - name: src_salesforce_leads
+    description: Leads from Salesforce
+
+    columns:
+      - name: id
+        description: ID of the lead
+
+      - name: is_deleted
+        description: Indicates whether the lead is deleted
+
+      - name: primary_contact_last_name
+        description: Last name of the lead
+        tests:
+          - not_null
+
+      - name: primary_contact_first_name
+        description: First name of the lead
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: title
+        description: Title (position) of the lead
+
+      - name: company
+        description: Name of the lead's company
+        tests:
+          - not_null
+
+      - name: street_address
+        description: Lead's street address
+
+      - name: address_city
+        description: Lead's address city
+
+      - name: address_state
+        description: Lead's address state
+
+      - name: postal_code
+        description: Lead's postal code
+
+      - name: country
+        description: Lead's country
+
+      - name: phone
+        description: Lead's phone number
+        tests:
+          - not_null
+          - unique
+
+      - name: mobile_phone
+        description: Lead's mobile phone number
+
+      - name: email
+        description: Lead's email address
+        tests:
+          - not_null
+
+      - name: website
+        description: Lead's website
+
+      - name: lead_source
+        description: Source of the lead
+
+      - name: status
+        description: Status of the lead
+
+      - name: is_converted
+        description: Indicates whether the lead is converted to a customer
+
+      - name: created_at
+        description: The timestamp at which the lead was created
+      
+      - name: created_date
+        description: The date on which the lead was created
+
+      - name: last_modified_at
+        description: The timestampe at which the lead was last modified
+      
+      - name: last_modified_date
+        description: The date on which the lead was last modified
+
+      - name: last_activity_date
+        description: The date of the last activity involving the lead
+
+      - name: last_viewed_date
+        description: The date on which the lead was last viewed
+
+      - name: last_referenced_date
+        description: The date on which the lead was last referenced 
+
+      - name: email_bounced_reason
+        description: |
+          The reason an email bounced, if it bounced
+          (could be a reason code? turns out is integer type)
+
+      - name: email_bounced_date
+        description: The date on which the email bounced
+
+      - name: outreach_stage
+        description: The outreach pipeline stage
+
+      - name: current_enrollment
+        description: The current enrollment of the lead's company
+
+      - name: capacity
+        description: The enrollment capacity of the lead's company
+
+      - name: lead_source_last_updated_at
+        description: The timestamp at which the lead was last updated
+
+      - name: brightwheel_school_uuid
+        description: The brightwheel app UUID of the lead's school (company)

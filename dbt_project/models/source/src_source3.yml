@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: src_source3
+    description: Leads from source3
+
+    columns:
+      - name: phone
+        description: The lead's phone number
+        tests:
+          - unique
+          - not_null
