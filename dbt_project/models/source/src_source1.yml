@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: src_source1
+    description: Leads from source1
+
+    columns:
+      - name: name
+        description: Name of the school lead
+
+      - name: credential_type
+        description: School's credential type
+
+      - name: credential_number
+        description: School's credential number
+
+      - name: status
+        description: School's credential status
+
+      - name: expiration_date
+        description: School's credential expiration date
+
+      - name: disciplinary_action
+        description: Indicates whether disciplinary action has been taken against the school
+
+      - name: address
+        description: The school's address
+
+      - name: address_state
+        description: The school's address state
+
+      - name: county
+        description: The school's county
+
+      - name: phone
+        description: The school's phone number
+        tests:
+          - not_null
+          - unique
+
+      - name: first_issue_date
+        description: The date on which the school's credentials were first issued
+
+      - name: primary_contact_name
+        description: The name of the school's primary contact
+        tests:
+          - not_null
+
+      - name: primary_contact_role
+        description: The primary contact's role
