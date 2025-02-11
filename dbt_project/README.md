@@ -21,7 +21,7 @@
 ### The stage model that was meant to be (I ran out of time)
 - The stage model would have all four sources outer joined, so we could see duplicates and deltas
 - I added a qualify to deduplicate in the `src` models, but would usually leave those with all records (to facilitate data exploration/troubleshooting as needed) and only deduplicate at the `stg` level; I ran out of time for the stage model and wanted to include at least one window function (since it would've been present in the stage level)
-  - I realized belatedly that I only deduplicated based on phone number (I cleaned up the primary phone numbers to be the same format with that in mind), rather than phone number and address information.
+  - I realized belatedly that I only deduplicated based on phone number (I cleaned up the primary phone numbers to be the same format with that in mind), rather than phone number _and_ address information
     - I would have liked to select the data in CTEs in a stage model, and normalize the address format such that it could be (semi-) confidently compared (e.g., concatenate address components (handling for nulls in the concatenation), all upper or lowercase) for a qualify and/or join
 - If the data did result in true duplicates (phone number and address) and therefore caused row expansion, I would consider a couple of options:
   - Use a qualify to deduplicate
