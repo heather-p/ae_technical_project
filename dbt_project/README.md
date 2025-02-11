@@ -14,7 +14,7 @@
 - I would flesh out the documentation and tests more (I ran out of time for that as well):
   - I would use a package like `dbt-osmosis` to help propagate documentation (including documentation of column data type)
   - I would use the `dbt-utils` package to expand testing functionality, and add custom tests as needed
-  - If I had greater understanding of the data, I would add additional tests (such as accepted_values)
+  - If I had greater understanding of the data, I would add additional tests (such as `accepted_values`)
 - I would also have explored combining/normalizing school age (infant, preschool, etc.) info from source2 and source3
 - I did not account for file schema changes - see `Future considerations` section for how I would account for those
 
