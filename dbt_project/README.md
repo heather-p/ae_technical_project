@@ -25,7 +25,7 @@
     - I would have liked to select the data in CTEs in a stage model, and normalize the address format such that it could be (semi-) confidently compared (e.g., concatenate address components (handling for nulls in the concatenation), all upper or lowercase) for a qualify and/or join
 - If the data did result in true duplicates (phone number and address) and therefore caused row expansion, I would consider a few options:
   - Use a `qualify` to deduplicate
-  - `array_agg` or `object_agg` the differing information for the duplicate phone numbers, such that there is only one row per phone number
+  - `array_agg` or `object_agg` the differing information for the duplicate phone numbers, such that there is only one row per phone number + address
   - Leave the row expansion in place if that's what desired (although I don't think that's a good option)
 - Would add timestamp for data load to help confirm what data has changed
 
